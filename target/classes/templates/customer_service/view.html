@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>KOREA | VIEW</title>
+    <link rel="stylesheet" href="../../static/css/customer_service/view.css" th:href="@{/css/customer_service/view.css}">
+</head>
+<body>
+<main layout:fragment="main">
+    <section class="question-view-container">
+        <div class="question-info">
+            <span>제목</span>
+            <span th:text="${oneOnOne.title}">테스트</span>
+        </div>
+        <div class="question-info">
+            <span>작성자</span>
+            <span th:text="${oneOnOne.writer}">테스터</span>
+        </div>
+        <div class="question-info">
+            <span>작성일</span>
+            <span th:text="${#temporals.format(oneOnOne.nowDateTime,'yyyy-MM-dd HH:mm:ss')}">2024-06-21 00:00:00</span>
+        </div>
+        <div class="question-info">
+            <span>공개여부</span>
+            <span th:text="${oneOnOne.isOpened?'Y':'N'}">Y</span>
+        </div>
+
+        <div class="question-info">
+            <span>조회수</span>
+            <span th:text="${oneOnOne.viewCount}">Y</span>
+        </div>
+
+        <div class="question-info">
+            <span>첨부파일</span>
+            <section id="files-container">
+                <ol class="files">
+                    <li th:each="oneOnOneFile : ${oneOnOne.files}">
+                        <a th:href="@{|/customer_service/one_on_one/file/${oneOnOneFile.UUID}|}" th:text="${oneOnOneFile.originalFileName}">파일1</a>
+                    </li>
+                </ol>
+            </section>
+        </div>
+
+        <section class="question-section">
+            <div class="question" th:text="${oneOnOne.content}">질문이에용</div>
+        </section>
+    </section>
+
+    <section class="answer-container">
+        <section class="answer-section" th:each="oneOnOneAnswer: ${oneOnOne.answers}">
+            <section class="answer-info-container">
+                <div class="answerer">
+                    <b>작성자</b>
+                    <span th:text="${oneOnOneAnswer.userId}">홍길동</span>
+
+                </div>
+                <div>
+                    <b>작성일</b>
+                    <span th:text="${#temporals.format(oneOnOneAnswer.writeDateTime,'yyyy-MM-dd')}">test</span>
+                </div>
+            </section>
+
+            <section class="answer-contents">
+                <div class="answer" th:text="${oneOnOneAnswer.answer}">답변이에용</div>
+            </section>
+
+            <section class="answer-files-container">
+                <span>첨부파일</span>
+                <div class="answer-files">
+                    <a href="#" class="answer-file">파일</a>
+                </div>
+            </section>
+        </section>
+
+        <form action="/customer_service/one_on_one/answer" method="post" class="answer-section">
+            <input type="hidden" th:name="oneOnOneNo" th:value="${oneOnOne.no}">
+            <section class="answer-contents">
+                <label>
+                    <textarea class="answer" th:name="answer">답변을작성하세용</textarea>
+                </label>
+
+            </section>
+
+            <section class="answer-files-container">
+                <span>첨부파일</span>
+                <input type="file">
+            </section>
+            <section>
+                <input type="submit" value="답글달기">
+            </section>
+
+        </form>
+    </section>
+
+    <!--댓글 목록-->
+    <section>
+
+    </section>
+    <section class="btn-container">
+        <button type="button" onclick="location.href = '/customer_service/one_on_one';">목록</button>
+    </section>
+
+</main>
+</body>
+</html>

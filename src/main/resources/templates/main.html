@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>KOREA NIKE</title>
+    <link rel="stylesheet" href="../static/css/main.html" th:href="@{/css/main.css}">
+
+    <script src="https://kit.fontawesome.com/d19fdaba43.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+    <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
+    <script src="../static/js/main-caroursel.js" th:src="@{/js/main-caroursel.js}" defer></script>
+</head>
+<body>
+<main layout:fragment="main">
+    <section id="main-top-section" class="embla">
+        <ul class="embla__container">
+            <li class="embla__slide">
+                <video src="https://filacdn.styleship.com/filacontent2/data/ContentsFile/0325_FILA_SUMMER_01_SHORT.mp4" autoplay muted loop></video>
+            </li>
+            <li class="embla__slide">
+                <img src="https://filacdn.styleship.com/filacontent2/data/banner/img_M_top_COLD%20WAVE_d_240516_93.jpg" alt="#">
+            </li>
+        </ul>
+    </section>
+
+    <section id="main-popular-items-section">
+
+
+
+
+        <div sec:authorize="authenticated" class="popular-items-select-btn-div">
+            <button>신제품✨</button>
+            <button>인기상품🎈</button>
+            <button>베스트셀러🧡</button>
+        </div>
+
+        <div class="popular-item-container">
+            <div class="item">
+                <div class="item-img" style="background-image: url('https://assets.adidas.com/images/w_600,f_auto,q_auto/5ee89be58e27428fb20ebbe1f7fe7aa2_9366/Grey_ID6514_01_standard.jpg')">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="price">69,000 원</span>
+                </div>
+                <h4>클라우드폼 무브 라운저</h4>
+                <span class="category">Shoes</span>
+            </div>
+            <div class="item">
+                <div class="item-img" style="background-image: url('https://assets.adidas.com/images/w_600,f_auto,q_auto/5ee89be58e27428fb20ebbe1f7fe7aa2_9366/Grey_ID6514_01_standard.jpg')">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="price">69,000 원</span>
+                </div>
+                <h4>클라우드폼 무브 라운저</h4>
+                <span class="category">Shoes</span>
+            </div>
+            <div class="item">
+                <div class="item-img" style="background-image: url('https://assets.adidas.com/images/w_600,f_auto,q_auto/5ee89be58e27428fb20ebbe1f7fe7aa2_9366/Grey_ID6514_01_standard.jpg')">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="price">69,000 원</span>
+                </div>
+                <h4>클라우드폼 무브 라운저</h4>
+                <span class="category">Shoes</span>
+            </div>
+            <div class="item">
+                <div class="item-img" style="background-image: url('https://assets.adidas.com/images/w_600,f_auto,q_auto/5ee89be58e27428fb20ebbe1f7fe7aa2_9366/Grey_ID6514_01_standard.jpg')">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="price">69,000 원</span>
+                </div>
+                <h4>클라우드폼 무브 라운저</h4>
+                <span class="category">Shoes</span>
+            </div>
+            <div class="item">
+                <div class="item-img" style="background-image: url('https://assets.adidas.com/images/w_600,f_auto,q_auto/5ee89be58e27428fb20ebbe1f7fe7aa2_9366/Grey_ID6514_01_standard.jpg')">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="price">69,000 원</span>
+                </div>
+                <h4>클라우드폼 무브 라운저</h4>
+                <span class="category">Shoes</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="main-plus-life-section">
+        <h2>PLUS LIFE</h2>
+        <div class="plus-life-container">
+            <div class="item" style="background-image: url('https://filacdn.styleship.com/filacontent2/data/banner/img_middle_sandblast_d_240227_10.jpg')">
+                <div>
+                    <h4>샌드 블라스트 라이트</h4>
+                    <span>FILA BET 슈즈 샌드 블라스트의 라이트 버전</span>
+                </div>
+            </div>
+
+            <div class="item" style="background-image: url('https://image.thehyundai.com/hdmall/images/main/logo_plus_life.png')"></div>
+
+            <div class="item" style="background-image: url('https://filacdn.styleship.com/filacontent2/data/banner/RAYUNITE_img_middle_d_240409_65.jpg');"></div>
+
+            <div class="item" style="background-image: url('https://filacdn.styleship.com/filacontent2/data/banner/img_middle_rgbflow_d_240326_92.jpg');"></div>
+
+            <div class="item">
+                    <span>
+                        생활편의 서비스부터 여행까지<br/>
+                        더 나은 삶을 위한 플러스
+                    </span>
+            </div>
+        </div>
+    </section>
+
+    <section id="commercial-section">
+        <div class="title-container">
+            <i class="fa-brands fa-instagram"></i>
+            <h4>@fila_korea</h4>
+        </div>
+        <div class="item-container">
+            <div class="item">
+                <span class="bg-img" style='background-image: url("https://scontent.cdninstagram.com/v/t51.29350-15/446968507_755595716753221_6183412011928874357_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=18de74&_nc_ohc=zNuTM2vUdjIQ7kNvgFAxdBU&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYAk-AEV1RD6S4X5RFPVNoGwiOJE_P2tpW594oIY7vNc0Q&oe=66632062")'></span>
+            </div>
+            <div class="item">
+                <span class="bg-img" style='background-image: url("https://scontent.cdninstagram.com/v/t51.29350-15/447138249_390826687291711_6792508063282254584_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=mPbEZFaxgrAQ7kNvgHA1T_z&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYB19lvnCMTQPa1P1vdxUWbkc-7QxyG1oE5sUiM3_6ukLg&oe=66634770")'></span>
+            </div>
+            <div class="item">
+                <span class="bg-img" style='background-image: url("https://scontent.cdninstagram.com/v/t51.29350-15/446625090_1804519010057058_4335279839191115453_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=18de74&_nc_ohc=NOCW0_BOXbcQ7kNvgHmUixF&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYBed_zzPfe6oKWuzBRr9q_Azj60zwwLOukZJr2WfekdAw&oe=66632003")'></span>
+            </div>
+            <div class="item">
+                <span class="bg-img" style='background-image: url("https://scontent.cdninstagram.com/v/t51.29350-15/446814640_1003804124468448_8287182898484213552_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=18de74&_nc_ohc=M-2EMns-KkwQ7kNvgH1hG-o&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYCpnqDe1T5U5x0I1gd2sEWaySHvaQLWK57WBVr3cxNtbA&oe=66635213")'></span>
+            </div>
+            <div class="item">
+                <span class="bg-img" style='background-image: url("https://scontent.cdninstagram.com/v/t51.29350-15/446335431_764017639266269_3640407975256411990_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=Cu_Vyr_RoPUQ7kNvgEMR9X-&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYARvAdFtA5J5Wi3uxXOgeQC0_QrIjXPJ8gXHQmY5uXL2w&oe=666343A0")'></span>
+            </div>
+            <div class="item">
+                <span class="bg-img" style='background-image: url("https://scontent.cdninstagram.com/v/t51.29350-15/446339068_420090047537309_5691047961229272906_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=Fjed0Pn7tLEQ7kNvgErlwMj&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYDOUdaEOXCh1f0-NWL0U5ZhvS9q-twVKRZLGG-0s837jw&oe=6663363C")'></span>
+            </div>
+            <div class="item">
+                <span class="bg-img" style='background-image: url("https://scontent.cdninstagram.com/v/t51.29350-15/446196981_1158100328841104_7205139424152623517_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=18de74&_nc_ohc=ZJ_RqD-M-iwQ7kNvgHKS6UY&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYC_kAj-4qx7kXR166WNguC7H41kmKwcdSaYuE-Ew4t2Vw&oe=6663450F")'></span>
+            </div>
+            <div class="item">
+                <span class="bg-img" style='background-image: url("https://scontent.cdninstagram.com/v/t51.29350-15/446125198_939418104623568_275215575967684135_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=18de74&_nc_ohc=qHIgRZGUTNoQ7kNvgG__AI4&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYDtQOZeVIjdaAHVs18OTrAGUEvLh5GMxksfD3CYLNSK4Q&oe=666325C7")'></span>
+            </div>
+            <div class="item">
+                <span class="bg-img" style='background-image: url("https://scontent.cdninstagram.com/v/t51.29350-15/445483976_354640997240328_2229903801800555093_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=18de74&_nc_ohc=f3XCjw6ZcWsQ7kNvgHBiHPW&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYDKujcLyNOMPotpwLB52-LrOuloPJJmaE8xomhoe2qp7g&oe=666323BC")'></span>
+            </div>
+            <div class="item">
+                <span class="bg-img" style='background-image: url("https://scontent.cdninstagram.com/v/t51.29350-15/446486153_953595943173197_7738502756340456676_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=18de74&_nc_ohc=MIiZic2V0mwQ7kNvgFFxmh0&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYCcZAkTd8ZESxR0BTLYUF32Klb8khLl8ZVTw_bRoki5jg&oe=6663320A")'></span>
+            </div>
+        </div>
+
+
+    </section>
+
+
+</main>
+</body>
+</html>
+
+
+
+
+
+
